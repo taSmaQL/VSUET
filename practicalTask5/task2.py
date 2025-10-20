@@ -6,7 +6,7 @@ if element in firstTuple:
         firstIndex = firstTuple.index(element)
         newTuple = firstTuple[firstIndex:]
         print(newTuple)
-    elif firstTuple.count(element) > 1:
+    elif firstTuple.count(element) == 2:
         index = firstTuple.index(element)
         firstIndex = firstTuple.index(element)
         secondIndex = firstTuple.index(element, firstIndex + 1)
