@@ -6,11 +6,11 @@ info["place"] = {"Severodvinsk"}
 info["hobby"] = {"Gooning",'Jogging','Reading','Programming'}
 info["animal"] = {"dogBellya","catVasya","wolfDaniel"}
 info["USE"] = {} 
-info["USE"].update({"Math":"95","Physics":"100","English":"100"})
+info["USE"].update({"Math":"95","Physics":"99","English":"90"})
 info["USE"].update({"Chemistry":"20"})
 del info["USE"]["Chemistry"]
 info["Uni"] = {}
-info["Uni"].update({"VSUET":"210","VSU":"55","VSTU":"10"})
+info["Uni"].update({"VSUET":"210","VSU":"300","VSTU":"284"})
 # 2
 print(f"Data: {info}")
 exams = ["info","math","chemistry"]
@@ -30,15 +30,33 @@ winter = [12, 1, 2]
 
 def checkMonths(month):
     if month in summer:
-        print("My birthday is in Summer.")
+        print("My birthday is in Summer. True")
     elif month in autumn:
-        print("My birthday is in Autumn.")
+        print("My birthday is in Autumn. False")
     elif month in spring:
-        print("My birthday is in Spring.")
+        print("My birthday is in Spring. True")
     elif month in winter:
-        print("My birthday is in Winter.")
+        print("My birthday is in Winter. False")
     else:
         print("Invalid month.")
-
 checkMonths(month)
-    
+
+hobbiesCount = ["Gooning",'Jogging','Reading','Programming']
+print(f"I have {len(hobbiesCount)} hobbies, my first hobby is {hobbiesCount[0]}.")
+
+
+print(f"After graduate the school I pass {len(info['USE'])} exams")
+
+
+sumMark = sum(int(value) for value in info["USE"].values())
+print(f"Сумма баллов = {sumMark}")
+
+
+maxMark = max(int(value) for value in info["USE"].values())
+print(f"Максимум баллов = {maxMark}")
+uniCount = 0
+for key,value in info["Uni"].items():
+    if sumMark >= int(value):
+        uniCount += 1
+        print(f"Я поступлю в {key}!")
+print(f"Кол-во вузов в которые я прохожу: {uniCount}.")
